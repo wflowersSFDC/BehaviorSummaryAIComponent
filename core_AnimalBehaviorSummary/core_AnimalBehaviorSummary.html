@@ -1,0 +1,28 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon class="white-icon slds-m-right_small"
+                icon-name="utility:animal_and_nature"></lightning-icon>
+            AI Generated Behavior Summary
+        </h3>
+        <div slot="actions">
+            <lightning-button-icon icon-name="utility:refresh" variant="bare-inverse" alternative-text="Refresh"
+                onclick={handleRefresh} disabled={isButtonDisabled}></lightning-button-icon>
+            <!-- <lightning-button label="Refresh" onclick={handleRefresh} disabled={isButtonDisabled}></lightning-button> -->
+        </div>
+        <div class="slds-m-horizontal_large slds-m-bottom_large">
+            <div class="fade-in">
+                <p>{fieldValue}</p>
+                <p class="slds-text-align_center slds-m-top_medium">Updated:&nbsp;
+                    <lightning-formatted-date-time value={lastUpdated} year="numeric" month="short" day="2-digit"
+                        hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                </p>
+            </div>
+        </div>
+        <div class={flowClass}>
+            <lightning-flow onstatuschange={handleStatusChange}></lightning-flow>
+        </div>
+        <p slot="footer" class="slds-text-align_center"><strong>AI can make mistakes. Double check important
+                information.</strong></p>
+    </lightning-card>
+</template>

@@ -1,0 +1,46 @@
+:host {
+    --slds-c-card-color-background: rgb(22, 50, 92);
+    --sds-c-card-color-background: rgb(22, 50, 92);
+    --slds-g-color-neutral-base-100: rgb(22, 50, 92);
+    --lwc-cardColorBackground: rgb(22, 50, 92);
+    color: white;
+
+    --slds-c-icon-color-foreground: rgb(255, 255, 255);
+    --slds-c-icon-color-foreground-default: rgb(255, 255, 255);
+    --sds-c-icon-color-foreground-default: rgb(255, 255, 255);
+    --slds-g-color-neutral-base-50: rgb(255, 255, 255);
+    --lwc-colorTextIconDefault: rgb(255, 255, 255);
+}
+
+.white-icon {
+    --slds-c-icon-color-foreground: white;
+}
+
+.fade-in {
+    position: relative;
+    overflow: hidden;
+    white-space: pre-line; /* This line will render line breaks */
+}
+
+.fade-in::after {
+    content: "";
+    position: absolute;
+    top: -2em; /* Adjust this value to change the gradient size */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 2em); /* Adjust this value to change the gradient size */
+    background: linear-gradient(to bottom, transparent, rgb(22, 50, 92) 2em, rgb(22, 50, 92)); /* Adjust this value to change the gradient size */
+    animation: reveal 2s forwards ease-in; /* reduced the animation duration to 2s */
+}
+
+@keyframes reveal {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+div:has(> lightning-flow), div:has(> lightning-flow) * {
+    height: 0 !important;
+    visibility: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
